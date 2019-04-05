@@ -15,6 +15,9 @@ final class AlgorithmDetailCell: UICollectionViewCell {
         let label = UILabel()
         label.textAlignment = .center
         label.backgroundColor = .clear
+        label.minimumScaleFactor = 0.5
+        label.contentScaleFactor = 0.5
+        label.adjustsFontSizeToFitWidth = true
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

@@ -27,6 +27,11 @@
 		716548BA225551E6009C41DD /* SelectionSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716548B9225551E6009C41DD /* SelectionSort.swift */; };
 		717844922257963400809DD8 /* InsertionSortTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717844912257963400809DD8 /* InsertionSortTests.swift */; };
 		717844942257964000809DD8 /* SelectionSortTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717844932257964000809DD8 /* SelectionSortTests.swift */; };
+		7178449A22579DAB00809DD8 /* DataSourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7178449922579DAB00809DD8 /* DataSourceViewController.swift */; };
+		7178449D2257B3A700809DD8 /* PaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7178449C2257B3A700809DD8 /* PaddedTextField.swift */; };
+		717844A02257F1E300809DD8 /* DataSourcePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7178449F2257F1E300809DD8 /* DataSourcePresenter.swift */; };
+		717844A22257F1F300809DD8 /* DataSourceProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717844A12257F1F300809DD8 /* DataSourceProtocols.swift */; };
+		717844A42257F3A800809DD8 /* DataSourceRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717844A32257F3A800809DD8 /* DataSourceRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +69,11 @@
 		716548B9225551E6009C41DD /* SelectionSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionSort.swift; sourceTree = "<group>"; };
 		717844912257963400809DD8 /* InsertionSortTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertionSortTests.swift; sourceTree = "<group>"; };
 		717844932257964000809DD8 /* SelectionSortTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionSortTests.swift; sourceTree = "<group>"; };
+		7178449922579DAB00809DD8 /* DataSourceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceViewController.swift; sourceTree = "<group>"; };
+		7178449C2257B3A700809DD8 /* PaddedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedTextField.swift; sourceTree = "<group>"; };
+		7178449F2257F1E300809DD8 /* DataSourcePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourcePresenter.swift; sourceTree = "<group>"; };
+		717844A12257F1F300809DD8 /* DataSourceProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceProtocols.swift; sourceTree = "<group>"; };
+		717844A32257F3A800809DD8 /* DataSourceRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +123,7 @@
 		716548832253DE8C009C41DD /* SortingAlgorithms */ = {
 			isa = PBXGroup;
 			children = (
+				7178449B2257B39100809DD8 /* CustomComponents */,
 				712E138822558ACE00EFBAC9 /* Extensions */,
 				716548A62253DECC009C41DD /* Scenes */,
 				716548A52253DEBA009C41DD /* Algorithms */,
@@ -124,10 +135,8 @@
 		716548982253DE8D009C41DD /* SortingAlgorithmsTests */ = {
 			isa = PBXGroup;
 			children = (
-				716548992253DE8D009C41DD /* BubbleSortTests.swift */,
+				71784495225797C400809DD8 /* AlgorithmsTests */,
 				7165489B2253DE8D009C41DD /* Info.plist */,
-				717844912257963400809DD8 /* InsertionSortTests.swift */,
-				717844932257964000809DD8 /* SelectionSortTests.swift */,
 			);
 			path = SortingAlgorithmsTests;
 			sourceTree = "<group>";
@@ -157,6 +166,7 @@
 		716548A62253DECC009C41DD /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				7178449E2257D21400809DD8 /* DataSourceInput */,
 				716548A82253DF22009C41DD /* AlgorithmDetail */,
 				716548A72253DF13009C41DD /* AlgorithmsList */,
 			);
@@ -184,6 +194,35 @@
 				716548B722554DDD009C41DD /* AlgorithmDetailCell.swift */,
 			);
 			path = AlgorithmDetail;
+			sourceTree = "<group>";
+		};
+		71784495225797C400809DD8 /* AlgorithmsTests */ = {
+			isa = PBXGroup;
+			children = (
+				716548992253DE8D009C41DD /* BubbleSortTests.swift */,
+				717844912257963400809DD8 /* InsertionSortTests.swift */,
+				717844932257964000809DD8 /* SelectionSortTests.swift */,
+			);
+			path = AlgorithmsTests;
+			sourceTree = "<group>";
+		};
+		7178449B2257B39100809DD8 /* CustomComponents */ = {
+			isa = PBXGroup;
+			children = (
+				7178449C2257B3A700809DD8 /* PaddedTextField.swift */,
+			);
+			path = CustomComponents;
+			sourceTree = "<group>";
+		};
+		7178449E2257D21400809DD8 /* DataSourceInput */ = {
+			isa = PBXGroup;
+			children = (
+				7178449922579DAB00809DD8 /* DataSourceViewController.swift */,
+				7178449F2257F1E300809DD8 /* DataSourcePresenter.swift */,
+				717844A12257F1F300809DD8 /* DataSourceProtocols.swift */,
+				717844A32257F3A800809DD8 /* DataSourceRouter.swift */,
+			);
+			path = DataSourceInput;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,7 +327,12 @@
 			files = (
 				716548AA2254EB7A009C41DD /* AlgorithmDetailViewController.swift in Sources */,
 				712E1385225585B100EFBAC9 /* AlgorithmsListProtocols.swift in Sources */,
+				7178449D2257B3A700809DD8 /* PaddedTextField.swift in Sources */,
+				7178449A22579DAB00809DD8 /* DataSourceViewController.swift in Sources */,
 				716548872253DE8C009C41DD /* AlgorithmsListViewController.swift in Sources */,
+				717844A42257F3A800809DD8 /* DataSourceRouter.swift in Sources */,
+				717844A22257F1F300809DD8 /* DataSourceProtocols.swift in Sources */,
+				717844A02257F1E300809DD8 /* DataSourcePresenter.swift in Sources */,
 				716548B222554898009C41DD /* AlgorithmDetailPresenter.swift in Sources */,
 				716548B622554CEC009C41DD /* AlgorithmsListCell.swift in Sources */,
 				712E138D22559D9600EFBAC9 /* AlgorithmsListRouter.swift in Sources */,
@@ -459,6 +503,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PFBFJV3F25;
 				INFOPLIST_FILE = "$(SRCROOT)/SortingAlgorithms/SupportingFiles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -477,6 +522,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PFBFJV3F25;
 				INFOPLIST_FILE = "$(SRCROOT)/SortingAlgorithms/SupportingFiles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

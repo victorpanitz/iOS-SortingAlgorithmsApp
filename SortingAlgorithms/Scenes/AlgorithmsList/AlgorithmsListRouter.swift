@@ -24,9 +24,7 @@ class AlgorithmsListRouter: AlgorithmsListRoutering {
     }
     
     func navigateToAlgorithmDetail(algorithm: Algorithm) {
-        let presenter = AlgorithmDetailPresenter(algorithm: algorithm, datasource: [12,94,53,0,65,22,3,44,87,3,10,4])
-        let viewController = AlgorithmDetailViewController(presenter: presenter)
-        
-        view?.navigationController?.pushViewController(viewController, animated: true)
+        let router = DataSourceRouter(algorithm: algorithm)
+        view?.navigationController?.pushViewController(router.makeViewController(), animated: true)
     }
 }
