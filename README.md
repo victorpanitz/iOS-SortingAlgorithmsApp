@@ -3,7 +3,7 @@
 # Sorting Algorithms App
 An open source app focused on show in a visual way how sorting algorithms actually works.
 
-![Alt text](https://media.giphy.com/media/lSVaBYt3cXBz1bKoCV/giphy.gif)
+![Alt text](https://media.giphy.com/media/IfrtKmAa5wbYefodi0/giphy.gif)
 
 ### Do you want to contribute? Check the backlog
 
