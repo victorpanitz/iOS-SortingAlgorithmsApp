@@ -9,7 +9,6 @@
 import Foundation
 
 final class BubbleSort: Algorithm {
-
     
     final var title: String = "Bubble Sort"
     final var image: String = "ic_bubble"

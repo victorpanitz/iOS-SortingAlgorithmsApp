@@ -34,7 +34,7 @@ final class SelectionSort: Algorithm {
                 }
             }
 
-            if i != minPos {
+            if array[i] != array[minPos] {
                 swaps.append((x0: i, x1: minPos))
                 array.swapAt(i, minPos)
             }

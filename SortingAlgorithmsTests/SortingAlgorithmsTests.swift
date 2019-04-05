@@ -11,24 +11,69 @@ import XCTest
 
 class SortingAlgorithmsTests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+    private let bubbleSort = BubbleSort()
+    private let insertionSort = InsertionSort()
+    private let selectionSort = SelectionSort()
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func test_BubbleSort_non_sorted() {
+        let swaps: [(x0: Int, x1: Int)] = bubbleSort.generateSwaps(from: [1,3,2,5,4])
+        
+        XCTAssert(swaps.count == 2)
+        XCTAssert((x0: 1, x1: 2) == swaps[0])
+        XCTAssert((x0: 3, x1: 4) == swaps[1])
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func test_BubbleSort_already_sorted() {
+        let swaps: [(x0: Int, x1: Int)] = bubbleSort.generateSwaps(from: [1,2,3,4,5])
+        
+        XCTAssert(swaps.count == 0)
     }
+    
+    func test_BubbleSort_equal_values() {
+        let swaps: [(x0: Int, x1: Int)] = bubbleSort.generateSwaps(from: [1,1,1,1,1])
 
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+        XCTAssert(swaps.count == 0)
+    }
+    
+    func test_InsertionSort_non_sorted() {
+        let swaps: [(x0: Int, x1: Int)] = insertionSort.generateSwaps(from: [1,3,2,5,4])
+        
+        XCTAssert(swaps.count == 2)
+        XCTAssert((x0: 2, x1: 1) == swaps[0])
+        XCTAssert((x0: 4, x1: 3) == swaps[1])
+    }
+    
+    func test_InsertionSort_already_sorted() {
+        let swaps: [(x0: Int, x1: Int)] = insertionSort.generateSwaps(from: [1,2,3,4,5])
+        
+        XCTAssert(swaps.count == 0)
+    }
+    
+    func test_InsertionSort_equal_values() {
+        let swaps: [(x0: Int, x1: Int)] = insertionSort.generateSwaps(from: [1,1,1,1,1])
+        
+        XCTAssert(swaps.count == 0)
+    }
+    
+    func test_SelectionSort_non_sorted() {
+        let swaps: [(x0: Int, x1: Int)] = selectionSort.generateSwaps(from: [1,3,2,5,4])
+        print(swaps)
+        XCTAssert(swaps.count == 2)
+        XCTAssert((x0: 1, x1: 2) == swaps[0])
+        XCTAssert((x0: 3, x1: 4) == swaps[1])
+    }
+    
+    func test_SelectionSort_already_sorted() {
+        let swaps: [(x0: Int, x1: Int)] = selectionSort.generateSwaps(from: [1,2,3,4,5])
+        
+        XCTAssert(swaps.count == 0)
+    }
+    
+    func test_SelectionSort_equal_values() {
+        let swaps: [(x0: Int, x1: Int)] = selectionSort.generateSwaps(from: [1,1,1,1,1])
+        print(swaps)
+        
+        XCTAssert(swaps.count == 0)
     }
 
 }

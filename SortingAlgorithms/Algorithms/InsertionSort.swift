@@ -25,8 +25,8 @@ final class InsertionSort: Algorithm {
             
             for j in (0...i-1).reversed() {
                 if array[pos] < array[j] {
-                    swaps.append((x0: pos, x1: j))
-                    array.swapAt(pos, j)
+                    swaps.append((x0: j, x1: pos))
+                    array.swapAt(j, pos)
                     pos = j
                 }
             }
