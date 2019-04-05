@@ -7,14 +7,14 @@ An open source app focused on show in a visual way how sorting algorithms actual
 
 ### Do you want to contribute? Check the backlog
 
-#### TODO
+#### // TODO:
 - [ ] New algorithms
 - [ ] Control animation speed
 - [ ] Enable user to add his own array
 - [ ] Add algorithm description on detail scene
 - [ ] More features on backlog :)
 
-#### IN PROGRESS
+#### // IN PROGRESS:
 - [X] Unit Tests
 
 ### Adding a new algorithm
