@@ -39,8 +39,8 @@ class SortingAlgorithmsTests: XCTestCase {
         let swaps: [(x0: Int, x1: Int)] = insertionSort.generateSwaps(from: [1,3,2,5,4])
         
         XCTAssert(swaps.count == 2)
-        XCTAssert((x0: 2, x1: 1) == swaps[0])
-        XCTAssert((x0: 4, x1: 3) == swaps[1])
+        XCTAssert((x0: 1, x1: 2) == swaps[0])
+        XCTAssert((x0: 3, x1: 4) == swaps[1])
     }
     
     func test_InsertionSort_already_sorted() {
