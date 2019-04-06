@@ -3,19 +3,21 @@
 # Sorting Algorithms App
 An open source app focused on show in a visual way how sorting algorithms actually works.
 
-![Alt text](https://media.giphy.com/media/lSVaBYt3cXBz1bKoCV/giphy.gif)
+![Alt text](https://media.giphy.com/media/IfrtKmAa5wbYefodi0/giphy.gif)
 
 ### Do you want to contribute? Check the backlog
 
-#### TODO
+#### // TODO:
 - [ ] New algorithms
 - [ ] Control animation speed
-- [ ] Enable user to add his own array
 - [ ] Add algorithm description on detail scene
 - [ ] More features on backlog :)
 
-#### IN PROGRESS
+#### // IN PROGRESS:
 - [X] Unit Tests
+
+#### // DONE:
+- [X] Enable user to add his own array
 
 ### Adding a new algorithm
 
