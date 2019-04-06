@@ -10,12 +10,14 @@ An open source app focused on show in a visual way how sorting algorithms actual
 #### // TODO:
 - [ ] New algorithms
 - [ ] Control animation speed
-- [ ] Enable user to add his own array
 - [ ] Add algorithm description on detail scene
 - [ ] More features on backlog :)
 
 #### // IN PROGRESS:
 - [X] Unit Tests
+
+#### // DONE:
+- [X] Enable user to add his own array
 
 ### Adding a new algorithm
 
