@@ -11,6 +11,7 @@
 		712E13872255874B00EFBAC9 /* AlgorithmsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E13862255874B00EFBAC9 /* AlgorithmsListPresenter.swift */; };
 		712E138B22558AE200EFBAC9 /* UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E138A22558AE200EFBAC9 /* UICollectionViewCell.swift */; };
 		712E138D22559D9600EFBAC9 /* AlgorithmsListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E138C22559D9600EFBAC9 /* AlgorithmsListRouter.swift */; };
+		712E138F2258F09800EFBAC9 /* AlgorithmDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E138E2258F09800EFBAC9 /* AlgorithmDetailRouter.swift */; };
 		716548852253DE8C009C41DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716548842253DE8C009C41DD /* AppDelegate.swift */; };
 		716548872253DE8C009C41DD /* AlgorithmsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716548862253DE8C009C41DD /* AlgorithmsListViewController.swift */; };
 		7165488C2253DE8D009C41DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7165488B2253DE8D009C41DD /* Assets.xcassets */; };
@@ -49,6 +50,7 @@
 		712E13862255874B00EFBAC9 /* AlgorithmsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmsListPresenter.swift; sourceTree = "<group>"; };
 		712E138A22558AE200EFBAC9 /* UICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCell.swift; sourceTree = "<group>"; };
 		712E138C22559D9600EFBAC9 /* AlgorithmsListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmsListRouter.swift; sourceTree = "<group>"; };
+		712E138E2258F09800EFBAC9 /* AlgorithmDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmDetailRouter.swift; sourceTree = "<group>"; };
 		716548812253DE8C009C41DD /* SortingAlgorithms.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SortingAlgorithms.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		716548842253DE8C009C41DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		716548862253DE8C009C41DD /* AlgorithmsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmsListViewController.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				716548B122554898009C41DD /* AlgorithmDetailPresenter.swift */,
 				716548B3225548B7009C41DD /* AlgorithmDetailProtocol.swift */,
 				716548B722554DDD009C41DD /* AlgorithmDetailCell.swift */,
+				712E138E2258F09800EFBAC9 /* AlgorithmDetailRouter.swift */,
 			);
 			path = AlgorithmDetail;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 				7178449D2257B3A700809DD8 /* PaddedTextField.swift in Sources */,
 				7178449A22579DAB00809DD8 /* DataSourceViewController.swift in Sources */,
 				716548872253DE8C009C41DD /* AlgorithmsListViewController.swift in Sources */,
+				712E138F2258F09800EFBAC9 /* AlgorithmDetailRouter.swift in Sources */,
 				717844A42257F3A800809DD8 /* DataSourceRouter.swift in Sources */,
 				717844A22257F1F300809DD8 /* DataSourceProtocols.swift in Sources */,
 				717844A02257F1E300809DD8 /* DataSourcePresenter.swift in Sources */,

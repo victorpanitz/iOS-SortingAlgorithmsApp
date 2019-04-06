@@ -43,15 +43,27 @@ final class AlgorithmDetailViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .black
-       
-        setupCollectionView()
         
-        navigationController?.navigationBar.prefersLargeTitles = false
+        setupNavigationBar()
+        setupCollectionView()
         
         presenter.attachView(self)
     }
     
-    private func setupCollectionView() {
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        presenter.viewDidAppear()
+        collectionView.reloadData()
+    }
+
+    private func setupNavigationBar() {
+        navigationController?.navigationBar.prefersLargeTitles = false
+        let rightButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.stop, target: self, action: #selector(closeButtonDidTouchUpInside))
+        self.navigationItem.rightBarButtonItem = rightButton
+    }
+    
+    private func setupCollectionView() {setupNavigationBar()
         view.addSubview(collectionView)
         
         NSLayoutConstraint.activate([
@@ -62,13 +74,9 @@ final class AlgorithmDetailViewController: UIViewController {
             ])
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        presenter.viewDidAppear()
-        collectionView.reloadData()
+    @objc private func closeButtonDidTouchUpInside() {
+        presenter.closeButtonTriggered()
     }
-    
 }
 
 extension AlgorithmDetailViewController: AlgorithmDetailView {

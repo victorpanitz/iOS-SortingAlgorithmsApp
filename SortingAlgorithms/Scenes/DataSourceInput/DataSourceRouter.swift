@@ -27,9 +27,8 @@ class DataSourceRouter: DataSourceRoutering {
     }
     
     func navigateToAlgorithmDetail(dataSource: [Int]) {
-        let presenter = AlgorithmDetailPresenter(algorithm: algorithm, datasource: dataSource)
-        let viewController = AlgorithmDetailViewController(presenter: presenter)
+        let router = AlgorithmDetailRouter(algorithm: algorithm, datasource: dataSource)
         
-        view?.navigationController?.pushViewController(viewController, animated: true)
+        view?.navigationController?.pushViewController(router.makeViewController(), animated: true)
     }
 }

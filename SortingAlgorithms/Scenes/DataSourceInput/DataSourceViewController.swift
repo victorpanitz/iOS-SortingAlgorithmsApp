@@ -13,7 +13,6 @@ final class DataSourceViewController: UIViewController {
     
     private lazy var inputField: PaddedTextField = {
         let textField = PaddedTextField()
-        textField.layer.cornerRadius = 8
         textField.textColor = .black
         textField.font = UIFont(name: "Avenir-Light", size: 40)
         textField.backgroundColor = .white
@@ -21,7 +20,6 @@ final class DataSourceViewController: UIViewController {
         textField.keyboardType = .numberPad
         textField.layer.shadowRadius = 10
         textField.layer.shadowOpacity = 0.5
-        textField.layer.cornerRadius = 5
         textField.translatesAutoresizingMaskIntoConstraints = false
         
         return textField
@@ -79,9 +77,8 @@ final class DataSourceViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .black
-        navigationController?.navigationBar.prefersLargeTitles = false
-        let rightButton = UIBarButtonItem(title: "Run", style: .done, target: self, action: #selector(runTouchUpInside))
-        self.navigationItem.rightBarButtonItem = rightButton
+
+        setupNavigationBar()
         
         setupInputField()
         setupAddButton()
@@ -91,24 +88,26 @@ final class DataSourceViewController: UIViewController {
         presenter.attachView(self)
     }
     
-    @objc private func runTouchUpInside() {
-        presenter.runTriggered()
-    }
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         presenter.viewDidAppear()
     }
     
+    private func setupNavigationBar() {
+        navigationController?.navigationBar.prefersLargeTitles = false
+        let rightButton = UIBarButtonItem(title: "Run", style: .done, target: self, action: #selector(runTouchUpInside))
+        self.navigationItem.rightBarButtonItem = rightButton
+    }
+    
     private func setupInputField(){
         view.addSubview(inputField)
         
         NSLayoutConstraint.activate([
-            inputField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 32),
+            inputField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 60),
             inputField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             inputField.widthAnchor.constraint(equalToConstant: view.frame.width*0.4),
-            inputField.heightAnchor.constraint(equalToConstant: view.frame.width*0.4),
+            inputField.heightAnchor.constraint(equalToConstant: view.frame.width*0.3),
             ])
         
         inputField.becomeFirstResponder()
@@ -129,7 +128,7 @@ final class DataSourceViewController: UIViewController {
         view.addSubview(addButton)
         
         NSLayoutConstraint.activate([
-            addButton.heightAnchor.constraint(equalToConstant: view.frame.height*0.7*0.2),
+            addButton.heightAnchor.constraint(equalToConstant: view.frame.width*0.3),
             addButton.leadingAnchor.constraint(equalTo: inputField.trailingAnchor),
             addButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -12),
             addButton.centerYAnchor.constraint(equalTo: inputField.centerYAnchor)
@@ -142,13 +141,17 @@ final class DataSourceViewController: UIViewController {
         view.addSubview(removeButton)
         
         NSLayoutConstraint.activate([
-            removeButton.heightAnchor.constraint(equalToConstant: view.frame.height*0.7*0.2),
+            removeButton.heightAnchor.constraint(equalToConstant: view.frame.width*0.3),
             removeButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 12),
             removeButton.trailingAnchor.constraint(equalTo: inputField.leadingAnchor),
             removeButton.centerYAnchor.constraint(equalTo: inputField.centerYAnchor)
             ])
         
         removeButton.addTarget(self, action: #selector(removeButtonTouchUpInside), for: .touchUpInside)
+    }
+    
+    @objc private func runTouchUpInside() {
+        presenter.runTriggered()
     }
     
     @objc private func addButtonTouchUpInside() {

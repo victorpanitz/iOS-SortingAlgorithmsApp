@@ -14,8 +14,10 @@ final class AlgorithmDetailPresenter {
     private let algorithm: Algorithm
     private lazy var datasource = [Int]()
     private var swaps = [(x0: Int, x1: Int)]()
+    private let router: AlgorithmDetailRoutering
     
-    init (algorithm: Algorithm, datasource: [Int]) {
+    init (router: AlgorithmDetailRoutering, algorithm: Algorithm, datasource: [Int]) {
+        self.router = router
         self.algorithm = algorithm
         self.datasource = datasource
     }
@@ -47,5 +49,9 @@ final class AlgorithmDetailPresenter {
             view?.updateDataSource(datasource)
             view?.swapCell(x0: swaps[0].x0, x1: swaps[0].x1)
         }
+    }
+    
+    func closeButtonTriggered() {
+        router.dismiss()
     }
 }
