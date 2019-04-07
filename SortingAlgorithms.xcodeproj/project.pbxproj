@@ -137,6 +137,7 @@
 		716548982253DE8D009C41DD /* SortingAlgorithmsTests */ = {
 			isa = PBXGroup;
 			children = (
+				716E72E2225AC1F700E436CA /* New Group */,
 				71784495225797C400809DD8 /* AlgorithmsTests */,
 				7165489B2253DE8D009C41DD /* Info.plist */,
 			);
@@ -178,8 +179,8 @@
 		716548A72253DF13009C41DD /* AlgorithmsList */ = {
 			isa = PBXGroup;
 			children = (
-				716548862253DE8C009C41DD /* AlgorithmsListViewController.swift */,
 				716548B522554CEC009C41DD /* AlgorithmsListCell.swift */,
+				716548862253DE8C009C41DD /* AlgorithmsListViewController.swift */,
 				712E1384225585B100EFBAC9 /* AlgorithmsListProtocols.swift */,
 				712E13862255874B00EFBAC9 /* AlgorithmsListPresenter.swift */,
 				712E138C22559D9600EFBAC9 /* AlgorithmsListRouter.swift */,
@@ -190,13 +191,20 @@
 		716548A82253DF22009C41DD /* AlgorithmDetail */ = {
 			isa = PBXGroup;
 			children = (
+				716548B722554DDD009C41DD /* AlgorithmDetailCell.swift */,
 				716548A92254EB7A009C41DD /* AlgorithmDetailViewController.swift */,
 				716548B122554898009C41DD /* AlgorithmDetailPresenter.swift */,
 				716548B3225548B7009C41DD /* AlgorithmDetailProtocol.swift */,
-				716548B722554DDD009C41DD /* AlgorithmDetailCell.swift */,
 				712E138E2258F09800EFBAC9 /* AlgorithmDetailRouter.swift */,
 			);
 			path = AlgorithmDetail;
+			sourceTree = "<group>";
+		};
+		716E72E2225AC1F700E436CA /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		71784495225797C400809DD8 /* AlgorithmsTests */ = {
@@ -504,6 +512,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PFBFJV3F25;
 				INFOPLIST_FILE = "$(SRCROOT)/SortingAlgorithms/SupportingFiles/Info.plist";
@@ -512,10 +521,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Victor.SortingAlgorithms;
+				PRODUCT_BUNDLE_IDENTIFIER = victorPanitz.Developer.SortingAlgorithms;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -523,6 +533,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PFBFJV3F25;
 				INFOPLIST_FILE = "$(SRCROOT)/SortingAlgorithms/SupportingFiles/Info.plist";
@@ -531,10 +542,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Victor.SortingAlgorithms;
+				PRODUCT_BUNDLE_IDENTIFIER = victorPanitz.Developer.SortingAlgorithms;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

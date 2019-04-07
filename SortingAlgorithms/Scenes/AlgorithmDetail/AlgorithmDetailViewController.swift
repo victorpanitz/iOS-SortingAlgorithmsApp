@@ -59,7 +59,13 @@ final class AlgorithmDetailViewController: UIViewController {
 
     private func setupNavigationBar() {
         navigationController?.navigationBar.prefersLargeTitles = false
-        let rightButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.stop, target: self, action: #selector(closeButtonDidTouchUpInside))
+        
+        let rightButton = UIBarButtonItem(
+            barButtonSystemItem: UIBarButtonItem.SystemItem.stop,
+            target: self,
+            action: #selector(closeButtonDidTouchUpInside)
+        )
+        
         self.navigationItem.rightBarButtonItem = rightButton
     }
     
@@ -90,7 +96,7 @@ extension AlgorithmDetailViewController: AlgorithmDetailView {
     }
     
     func swapCell(x0: Int, x1: Int) {
-        UIView.animate(withDuration: 1, animations: {
+        UIView.animate(withDuration: 0.8, animations: {
             self.collectionView.swap(x0, x1, completion: { [weak self] (_) in
                 self?.presenter.swapDidComplete()
             })
