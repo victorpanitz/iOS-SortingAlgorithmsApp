@@ -26,6 +26,7 @@
 		716548B622554CEC009C41DD /* AlgorithmsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716548B522554CEC009C41DD /* AlgorithmsListCell.swift */; };
 		716548B822554DDD009C41DD /* AlgorithmDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716548B722554DDD009C41DD /* AlgorithmDetailCell.swift */; };
 		716548BA225551E6009C41DD /* SelectionSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716548B9225551E6009C41DD /* SelectionSort.swift */; };
+		716E72E7225AD4D000E436CA /* AlgorithmsListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716E72E6225AD4D000E436CA /* AlgorithmsListPresenterTests.swift */; };
 		717844922257963400809DD8 /* InsertionSortTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717844912257963400809DD8 /* InsertionSortTests.swift */; };
 		717844942257964000809DD8 /* SelectionSortTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717844932257964000809DD8 /* SelectionSortTests.swift */; };
 		7178449A22579DAB00809DD8 /* DataSourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7178449922579DAB00809DD8 /* DataSourceViewController.swift */; };
@@ -69,6 +70,7 @@
 		716548B522554CEC009C41DD /* AlgorithmsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmsListCell.swift; sourceTree = "<group>"; };
 		716548B722554DDD009C41DD /* AlgorithmDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmDetailCell.swift; sourceTree = "<group>"; };
 		716548B9225551E6009C41DD /* SelectionSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionSort.swift; sourceTree = "<group>"; };
+		716E72E6225AD4D000E436CA /* AlgorithmsListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmsListPresenterTests.swift; sourceTree = "<group>"; };
 		717844912257963400809DD8 /* InsertionSortTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertionSortTests.swift; sourceTree = "<group>"; };
 		717844932257964000809DD8 /* SelectionSortTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionSortTests.swift; sourceTree = "<group>"; };
 		7178449922579DAB00809DD8 /* DataSourceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceViewController.swift; sourceTree = "<group>"; };
@@ -137,7 +139,7 @@
 		716548982253DE8D009C41DD /* SortingAlgorithmsTests */ = {
 			isa = PBXGroup;
 			children = (
-				716E72E2225AC1F700E436CA /* New Group */,
+				716E72E2225AC1F700E436CA /* Modules */,
 				71784495225797C400809DD8 /* AlgorithmsTests */,
 				7165489B2253DE8D009C41DD /* Info.plist */,
 			);
@@ -200,11 +202,20 @@
 			path = AlgorithmDetail;
 			sourceTree = "<group>";
 		};
-		716E72E2225AC1F700E436CA /* New Group */ = {
+		716E72E2225AC1F700E436CA /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				716E72E3225AD49C00E436CA /* AlgorithmsList */,
 			);
-			path = "New Group";
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		716E72E3225AD49C00E436CA /* AlgorithmsList */ = {
+			isa = PBXGroup;
+			children = (
+				716E72E6225AD4D000E436CA /* AlgorithmsListPresenterTests.swift */,
+			);
+			path = AlgorithmsList;
 			sourceTree = "<group>";
 		};
 		71784495225797C400809DD8 /* AlgorithmsTests */ = {
@@ -366,6 +377,7 @@
 			files = (
 				717844942257964000809DD8 /* SelectionSortTests.swift in Sources */,
 				7165489A2253DE8D009C41DD /* BubbleSortTests.swift in Sources */,
+				716E72E7225AD4D000E436CA /* AlgorithmsListPresenterTests.swift in Sources */,
 				717844922257963400809DD8 /* InsertionSortTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
