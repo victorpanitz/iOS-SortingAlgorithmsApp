@@ -53,7 +53,7 @@ final class AlgorithmDetailViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        presenter.viewDidAppear()
+        presenter.startSwap()
         collectionView.reloadData()
     }
 
@@ -98,7 +98,7 @@ extension AlgorithmDetailViewController: AlgorithmDetailView {
     func swapCell(x0: Int, x1: Int) {
         UIView.animate(withDuration: 0.8, animations: {
             self.collectionView.swap(x0, x1, completion: { [weak self] (_) in
-                self?.presenter.swapDidComplete()
+                self?.presenter.startSwap()
             })
         })
     }
