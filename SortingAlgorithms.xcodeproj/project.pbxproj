@@ -141,7 +141,7 @@
 		716548982253DE8D009C41DD /* SortingAlgorithmsTests */ = {
 			isa = PBXGroup;
 			children = (
-				716E72E2225AC1F700E436CA /* Modules */,
+				716E72E2225AC1F700E436CA /* ModulesTests */,
 				71784495225797C400809DD8 /* AlgorithmsTests */,
 				7165489B2253DE8D009C41DD /* Info.plist */,
 			);
@@ -204,13 +204,13 @@
 			path = AlgorithmDetail;
 			sourceTree = "<group>";
 		};
-		716E72E2225AC1F700E436CA /* Modules */ = {
+		716E72E2225AC1F700E436CA /* ModulesTests */ = {
 			isa = PBXGroup;
 			children = (
 				717844A5225B7CD700809DD8 /* AlgorithmDetail */,
 				716E72E3225AD49C00E436CA /* AlgorithmsList */,
 			);
-			path = Modules;
+			path = ModulesTests;
 			sourceTree = "<group>";
 		};
 		716E72E3225AD49C00E436CA /* AlgorithmsList */ = {
