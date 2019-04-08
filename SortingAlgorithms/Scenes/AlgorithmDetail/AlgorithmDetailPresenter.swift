@@ -31,23 +31,20 @@ final class AlgorithmDetailPresenter {
     }
     
     func viewDidAppear() {
-        if swaps.count > 0 {
-            algorithm.swapDataSource(datasource: &datasource, x0: swaps[0].x0, x1: swaps[0].x1)
-            
-            view?.setNavigationBarTitle(algorithm.title)
-            view?.updateDataSource(datasource)
-            view?.swapCell(x0: swaps[0].x0,x1: swaps[0].x1)
-        }
+        startSwap()
     }
     
     func swapDidComplete() {
-        swaps.removeFirst()
+        startSwap()
+    }
+    
+    private func startSwap() {
         
         if swaps.count > 0 {
             algorithm.swapDataSource(datasource: &datasource, x0: swaps[0].x0, x1: swaps[0].x1)
-            
             view?.updateDataSource(datasource)
             view?.swapCell(x0: swaps[0].x0, x1: swaps[0].x1)
+            swaps.removeFirst()
         }
     }
     
