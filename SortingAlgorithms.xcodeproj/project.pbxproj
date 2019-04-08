@@ -34,6 +34,7 @@
 		717844A02257F1E300809DD8 /* DataSourcePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7178449F2257F1E300809DD8 /* DataSourcePresenter.swift */; };
 		717844A22257F1F300809DD8 /* DataSourceProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717844A12257F1F300809DD8 /* DataSourceProtocols.swift */; };
 		717844A42257F3A800809DD8 /* DataSourceRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717844A32257F3A800809DD8 /* DataSourceRouter.swift */; };
+		717844A7225B7CEB00809DD8 /* AlgorithmDetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717844A6225B7CEB00809DD8 /* AlgorithmDetailPresenterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		7178449F2257F1E300809DD8 /* DataSourcePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourcePresenter.swift; sourceTree = "<group>"; };
 		717844A12257F1F300809DD8 /* DataSourceProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceProtocols.swift; sourceTree = "<group>"; };
 		717844A32257F3A800809DD8 /* DataSourceRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceRouter.swift; sourceTree = "<group>"; };
+		717844A6225B7CEB00809DD8 /* AlgorithmDetailPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmDetailPresenterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +207,7 @@
 		716E72E2225AC1F700E436CA /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				717844A5225B7CD700809DD8 /* AlgorithmDetail */,
 				716E72E3225AD49C00E436CA /* AlgorithmsList */,
 			);
 			path = Modules;
@@ -245,6 +248,14 @@
 				717844A32257F3A800809DD8 /* DataSourceRouter.swift */,
 			);
 			path = DataSourceInput;
+			sourceTree = "<group>";
+		};
+		717844A5225B7CD700809DD8 /* AlgorithmDetail */ = {
+			isa = PBXGroup;
+			children = (
+				717844A6225B7CEB00809DD8 /* AlgorithmDetailPresenterTests.swift */,
+			);
+			path = AlgorithmDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -375,6 +386,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				717844A7225B7CEB00809DD8 /* AlgorithmDetailPresenterTests.swift in Sources */,
 				717844942257964000809DD8 /* SelectionSortTests.swift in Sources */,
 				7165489A2253DE8D009C41DD /* BubbleSortTests.swift in Sources */,
 				716E72E7225AD4D000E436CA /* AlgorithmsListPresenterTests.swift in Sources */,
