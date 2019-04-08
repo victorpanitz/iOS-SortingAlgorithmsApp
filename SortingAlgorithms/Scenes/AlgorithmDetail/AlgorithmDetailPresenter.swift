@@ -30,7 +30,15 @@ final class AlgorithmDetailPresenter {
         swaps = algorithm.generateSwaps(from: datasource)
     }
     
-    func startSwap() {
+    func viewDidAppear() {
+        startSwap()
+    }
+    
+    func swapDidComplete() {
+        startSwap()
+    }
+    
+    private func startSwap() {
         
         if swaps.count > 0 {
             algorithm.swapDataSource(datasource: &datasource, x0: swaps[0].x0, x1: swaps[0].x1)
