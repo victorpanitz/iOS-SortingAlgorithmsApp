@@ -65,5 +65,11 @@ class AlgorithmsListPresenter {
 Try adding your own solution, feel free to suggest changes on the current code. If you're ready to submit a contribution, create a pull request describing your approach. All contributions are welcome even the small ones.
 
 ### Contributors
+The list of [contributors](https://github.com/victorpanitz/iOS-SortingAlgorithmsApp/graphs/contributors):
 
-See you here :)
+🇧🇷 - [Victor Panitz Magalhães](https://github.com/victorpanitz)
+
+🇮🇳 - [Anantha Krishnan](https://github.com/AnanthaKrish)
+
+
+
