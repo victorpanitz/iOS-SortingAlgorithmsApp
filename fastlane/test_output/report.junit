@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites name='SortingAlgorithmsTests.xctest' tests='22' failures='0'>
+  <testsuite name='SortingAlgorithmsTests.AlgorithmsDetailPresenterTests' tests='4' failures='0'>
+    <testcase classname='SortingAlgorithmsTests.AlgorithmsDetailPresenterTests' name='test_attachView' time='0.003'/>
+    <testcase classname='SortingAlgorithmsTests.AlgorithmsDetailPresenterTests' name='test_closeButtonTriggered' time='0.000'/>
+    <testcase classname='SortingAlgorithmsTests.AlgorithmsDetailPresenterTests' name='test_swapDidComplete' time='0.001'/>
+    <testcase classname='SortingAlgorithmsTests.AlgorithmsDetailPresenterTests' name='test_viewDidAppear' time='0.001'/>
+  </testsuite>
+  <testsuite name='SortingAlgorithmsTests.AlgorithmsListPresenterTests' tests='6' failures='0'>
+    <testcase classname='SortingAlgorithmsTests.AlgorithmsListPresenterTests' name='test_attachView' time='0.001'/>
+    <testcase classname='SortingAlgorithmsTests.AlgorithmsListPresenterTests' name='test_itemTriggered_bubbleSort' time='0.002'/>
+    <testcase classname='SortingAlgorithmsTests.AlgorithmsListPresenterTests' name='test_itemTriggered_insertionSort' time='0.000'/>
+    <testcase classname='SortingAlgorithmsTests.AlgorithmsListPresenterTests' name='test_itemTriggered_invalid_index' time='0.000'/>
+    <testcase classname='SortingAlgorithmsTests.AlgorithmsListPresenterTests' name='test_itemTriggered_selectionSort' time='0.000'/>
+    <testcase classname='SortingAlgorithmsTests.AlgorithmsListPresenterTests' name='test_viewWillAppear' time='0.000'/>
+  </testsuite>
+  <testsuite name='SortingAlgorithmsTests.BubbleSortTests' tests='4' failures='0'>
+    <testcase classname='SortingAlgorithmsTests.BubbleSortTests' name='test_BubbleSort_already_sorted' time='0.001'/>
+    <testcase classname='SortingAlgorithmsTests.BubbleSortTests' name='test_BubbleSort_equal_values' time='0.001'/>
+    <testcase classname='SortingAlgorithmsTests.BubbleSortTests' name='test_BubbleSort_non_sorted' time='0.001'/>
+    <testcase classname='SortingAlgorithmsTests.BubbleSortTests' name='test_BubbleSort_swap_data_source' time='0.001'/>
+  </testsuite>
+  <testsuite name='SortingAlgorithmsTests.InsertionSortTests' tests='4' failures='0'>
+    <testcase classname='SortingAlgorithmsTests.InsertionSortTests' name='test_InsertionSort_already_sorted' time='0.001'/>
+    <testcase classname='SortingAlgorithmsTests.InsertionSortTests' name='test_InsertionSort_equal_values' time='0.000'/>
+    <testcase classname='SortingAlgorithmsTests.InsertionSortTests' name='test_InsertionSort_non_sorted' time='0.000'/>
+    <testcase classname='SortingAlgorithmsTests.InsertionSortTests' name='test_InsertionSort_swap_data_source' time='0.000'/>
+  </testsuite>
+  <testsuite name='SortingAlgorithmsTests.SelectionSortTests' tests='4' failures='0'>
+    <testcase classname='SortingAlgorithmsTests.SelectionSortTests' name='test_SelectionSort_already_sorted' time='0.001'/>
+    <testcase classname='SortingAlgorithmsTests.SelectionSortTests' name='test_SelectionSort_equal_values' time='0.001'/>
+    <testcase classname='SortingAlgorithmsTests.SelectionSortTests' name='test_SelectionSort_non_sorted' time='0.001'/>
+    <testcase classname='SortingAlgorithmsTests.SelectionSortTests' name='test_SelectionSort_swap_data_source' time='0.000'/>
+  </testsuite>
+</testsuites>
