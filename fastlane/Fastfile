@@ -23,7 +23,7 @@ platform :ios do
     increment_build_number(build_number: number_of_commits)
     cert
     sigh(force: true)
-    gym(scheme: "your_schema_name", export_method: "development")
+    gym(scheme: "SortingAlgorithms", export_method: "development")
     upload_to_testflight
   end
 
