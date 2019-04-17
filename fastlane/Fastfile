@@ -21,7 +21,10 @@ platform :ios do
   lane :beta do
     tests
     increment_build_number(build_number: number_of_commits)
-    cert
+    get_certificates(
+      development: true,
+      username: "victorpanitz@gmail.com"
+    )
     sigh(force: true)
     enable_automatic_code_signing
     gym(scheme: "SortingAlgorithms", export_method: "development")
