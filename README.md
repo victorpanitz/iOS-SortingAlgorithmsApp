@@ -3,6 +3,8 @@
 # Sorting Algorithms App
 An open source app focused on show in a visual way how sorting algorithms actually works.
 
+**Available on the app store**
+
 ![Alt text](https://i.imgur.com/CL9hL95.png)
 
 ### Do you want to contribute? Check the backlog
