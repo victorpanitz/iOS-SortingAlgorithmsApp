@@ -9,9 +9,10 @@
 import Foundation
 
 protocol AlgorithmDetailView: AnyObject {
-    func updateDataSource(_ datasource: [Int])
+    func updateDataSource(_ datasource: [Int], reloadData: Bool)
     func swapCell(x0: Int, x1: Int)
     func setNavigationBarTitle(_ text: String)
+    func allSwapsDidEnd()
 }
 
 protocol AlgorithmDetailRoutering: AnyObject {

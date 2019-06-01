@@ -11,6 +11,24 @@ import UIKit
 
 final class AlgorithmDetailViewController: UIViewController {
     
+    lazy var closeButton: UIBarButtonItem = {
+        var rightButton = UIBarButtonItem(
+            barButtonSystemItem: UIBarButtonItem.SystemItem.stop,
+            target: self,
+            action: #selector(closeButtonDidTouchUpInside)
+        )
+        return rightButton
+    }()
+    
+    lazy var restartButton: UIBarButtonItem = {
+        let restartButton = UIBarButtonItem(
+            barButtonSystemItem: .refresh,
+            target: self,
+            action: #selector(restartButtonDidTouchUpInside))
+        restartButton.isEnabled = false
+        return restartButton
+    }()
+    
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -60,13 +78,10 @@ final class AlgorithmDetailViewController: UIViewController {
     private func setupNavigationBar() {
         navigationController?.navigationBar.prefersLargeTitles = false
         
-        let rightButton = UIBarButtonItem(
-            barButtonSystemItem: UIBarButtonItem.SystemItem.stop,
-            target: self,
-            action: #selector(closeButtonDidTouchUpInside)
-        )
-        
-        self.navigationItem.rightBarButtonItem = rightButton
+        self.navigationItem.rightBarButtonItems = [
+            restartButton,
+            closeButton
+        ]
     }
     
     private func setupCollectionView() {setupNavigationBar()
@@ -83,16 +98,29 @@ final class AlgorithmDetailViewController: UIViewController {
     @objc private func closeButtonDidTouchUpInside() {
         presenter.closeButtonTriggered()
     }
+    
+    @objc private func restartButtonDidTouchUpInside() {
+        presenter.restart()
+        restartButton.isEnabled = false
+    }
 }
 
 extension AlgorithmDetailViewController: AlgorithmDetailView {
+    
+    func allSwapsDidEnd() {
+        restartButton.isEnabled = true
+    }
     
     func setNavigationBarTitle(_ text: String) {
         navigationItem.title = text
     }
     
-    func updateDataSource(_ datasource: [Int]) {
+    func updateDataSource(_ datasource: [Int], reloadData: Bool) {
         self.datasource = datasource
+        
+        if reloadData {
+            self.collectionView.reloadData()
+        }
     }
     
     func swapCell(x0: Int, x1: Int) {

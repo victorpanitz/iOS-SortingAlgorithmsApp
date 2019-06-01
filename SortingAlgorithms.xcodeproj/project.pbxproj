@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		147EBB4E22A2196A00D19988 /* QuickSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147EBB4D22A2196A00D19988 /* QuickSort.swift */; };
 		712E1385225585B100EFBAC9 /* AlgorithmsListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E1384225585B100EFBAC9 /* AlgorithmsListProtocols.swift */; };
 		712E13872255874B00EFBAC9 /* AlgorithmsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E13862255874B00EFBAC9 /* AlgorithmsListPresenter.swift */; };
 		712E138B22558AE200EFBAC9 /* UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E138A22558AE200EFBAC9 /* UICollectionViewCell.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		147EBB4D22A2196A00D19988 /* QuickSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickSort.swift; sourceTree = "<group>"; };
 		712E1384225585B100EFBAC9 /* AlgorithmsListProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmsListProtocols.swift; sourceTree = "<group>"; };
 		712E13862255874B00EFBAC9 /* AlgorithmsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmsListPresenter.swift; sourceTree = "<group>"; };
 		712E138A22558AE200EFBAC9 /* UICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCell.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				716548AD2254EED8009C41DD /* BubbleSort.swift */,
 				716548AF22554791009C41DD /* InsertionSort.swift */,
 				716548B9225551E6009C41DD /* SelectionSort.swift */,
+				147EBB4D22A2196A00D19988 /* QuickSort.swift */,
 			);
 			path = Algorithms;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 				716548BA225551E6009C41DD /* SelectionSort.swift in Sources */,
 				712E13872255874B00EFBAC9 /* AlgorithmsListPresenter.swift in Sources */,
 				716548B822554DDD009C41DD /* AlgorithmDetailCell.swift in Sources */,
+				147EBB4E22A2196A00D19988 /* QuickSort.swift in Sources */,
 				712E138B22558AE200EFBAC9 /* UICollectionViewCell.swift in Sources */,
 				716548AE2254EED8009C41DD /* BubbleSort.swift in Sources */,
 				716548B4225548B7009C41DD /* AlgorithmDetailProtocol.swift in Sources */,

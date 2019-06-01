@@ -62,6 +62,18 @@ final class DataSourceViewController: UIViewController {
         return label
     }()
     
+    private let addSampleButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.titleLabel?.font = UIFont(name: "Avenir", size: 20)
+        button.setTitleColor(#colorLiteral(red: 0, green: 0.9768045545, blue: 0, alpha: 1), for: .normal)
+        button.setTitle("Sample Array", for: .normal)
+        button.layer.cornerRadius = 8
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1).withAlphaComponent(0.3)
+        
+        return button
+    }()
+    
     let presenter: DataSourcePresenter
     
     init(presenter: DataSourcePresenter) {
@@ -84,6 +96,7 @@ final class DataSourceViewController: UIViewController {
         setupAddButton()
         setupRemoveButton()
         setupArrayLabel()
+        setupAddSampleButton()
         
         presenter.attachView(self)
     }
@@ -150,6 +163,19 @@ final class DataSourceViewController: UIViewController {
         removeButton.addTarget(self, action: #selector(removeButtonTouchUpInside), for: .touchUpInside)
     }
     
+    private func setupAddSampleButton() {
+        view.addSubview(addSampleButton)
+        
+        NSLayoutConstraint.activate([
+            addSampleButton.topAnchor.constraint(equalTo: arrayLabel.bottomAnchor, constant: 20.0),
+            addSampleButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            addSampleButton.widthAnchor.constraint(equalToConstant: 140.0),
+            addSampleButton.heightAnchor.constraint(equalToConstant: 40.0)
+            ])
+        
+        addSampleButton.addTarget(self, action: #selector(addSampleArrayTouchUpInside), for: .touchUpInside)
+    }
+    
     @objc private func runTouchUpInside() {
         presenter.runTriggered()
     }
@@ -160,6 +186,10 @@ final class DataSourceViewController: UIViewController {
     
     @objc private func removeButtonTouchUpInside() {
         presenter.removeButtonTriggered()
+    }
+    
+    @objc private func addSampleArrayTouchUpInside() {
+        presenter.addSampleArray()
     }
 
 }
