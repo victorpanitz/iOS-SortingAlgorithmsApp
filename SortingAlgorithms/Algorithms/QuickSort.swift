@@ -43,21 +43,24 @@ extension QuickSort {
             return
         }
         for _ in 0...array.count {
-            if(low <= high) {
-                if(array[low] < array[pivot]) {
-                    low = low + 1;
-                    continue;
+            if low <= high {
+                if array[low] <= array[pivot] {
+                    low = low + 1
+                    continue
                 }
-                if( array[high] > array[pivot]) {
-                    high = high - 1;
-                    continue;
+                if array[high] > array[pivot] {
+                    high = high - 1
+                    continue
                 }
                 swap(array: &array, num1: low, num2: high);
-                low = low + 1;
-                high = high - 1;
+                low = low + 1
+                high = high - 1
             } else {
+                if array[low] == array[pivot] {
+                    break
+                }
                 swap(array: &array, num1: pivot, num2: low)
-                break;
+                break
             }
         }
         quicksort(array: &array, left: left, right: high)

@@ -100,27 +100,27 @@ final class AlgorithmDetailViewController: UIViewController {
     }
     
     @objc private func restartButtonDidTouchUpInside() {
-        presenter.restart()
-        restartButton.isEnabled = false
+        presenter.restartButtonTriggered()
     }
 }
 
 extension AlgorithmDetailViewController: AlgorithmDetailView {
     
-    func allSwapsDidEnd() {
-        restartButton.isEnabled = true
+    func toggleRestartButton(_ isEnable: Bool) {
+        restartButton.isEnabled = isEnable
     }
     
     func setNavigationBarTitle(_ text: String) {
         navigationItem.title = text
     }
     
-    func updateDataSource(_ datasource: [Int], reloadData: Bool) {
+    func updateDataSource(_ datasource: [Int]) {
         self.datasource = datasource
-        
-        if reloadData {
-            self.collectionView.reloadData()
-        }
+    }
+    
+    func updateDataSourceAndReloadData(_ datasource: [Int]) {
+        self.datasource = datasource
+        self.collectionView.reloadData()
     }
     
     func swapCell(x0: Int, x1: Int) {

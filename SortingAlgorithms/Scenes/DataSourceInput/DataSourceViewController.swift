@@ -189,7 +189,7 @@ final class DataSourceViewController: UIViewController {
     }
     
     @objc private func addSampleArrayTouchUpInside() {
-        presenter.addSampleArray()
+        presenter.addSampleButtonTrigerred()
     }
 
 }

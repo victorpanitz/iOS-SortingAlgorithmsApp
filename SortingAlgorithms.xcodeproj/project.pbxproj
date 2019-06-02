@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		147EBB4E22A2196A00D19988 /* QuickSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147EBB4D22A2196A00D19988 /* QuickSort.swift */; };
+		14E5F58322A46133008537F5 /* QuickSortTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E5F58222A46133008537F5 /* QuickSortTests.swift */; };
 		712E1385225585B100EFBAC9 /* AlgorithmsListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E1384225585B100EFBAC9 /* AlgorithmsListProtocols.swift */; };
 		712E13872255874B00EFBAC9 /* AlgorithmsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E13862255874B00EFBAC9 /* AlgorithmsListPresenter.swift */; };
 		712E138B22558AE200EFBAC9 /* UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E138A22558AE200EFBAC9 /* UICollectionViewCell.swift */; };
@@ -50,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		147EBB4D22A2196A00D19988 /* QuickSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickSort.swift; sourceTree = "<group>"; };
+		14E5F58222A46133008537F5 /* QuickSortTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickSortTests.swift; sourceTree = "<group>"; };
 		712E1384225585B100EFBAC9 /* AlgorithmsListProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmsListProtocols.swift; sourceTree = "<group>"; };
 		712E13862255874B00EFBAC9 /* AlgorithmsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmsListPresenter.swift; sourceTree = "<group>"; };
 		712E138A22558AE200EFBAC9 /* UICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCell.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 				716548992253DE8D009C41DD /* BubbleSortTests.swift */,
 				717844912257963400809DD8 /* InsertionSortTests.swift */,
 				717844932257964000809DD8 /* SelectionSortTests.swift */,
+				14E5F58222A46133008537F5 /* QuickSortTests.swift */,
 			);
 			path = AlgorithmsTests;
 			sourceTree = "<group>";
@@ -395,6 +398,7 @@
 				7165489A2253DE8D009C41DD /* BubbleSortTests.swift in Sources */,
 				716E72E7225AD4D000E436CA /* AlgorithmsListPresenterTests.swift in Sources */,
 				717844922257963400809DD8 /* InsertionSortTests.swift in Sources */,
+				14E5F58322A46133008537F5 /* QuickSortTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

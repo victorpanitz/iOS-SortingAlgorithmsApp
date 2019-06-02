@@ -58,7 +58,7 @@ final class DataSourcePresenter {
         }
     }
     
-    func addSampleArray() {
+    func addSampleButtonTrigerred() {
         array = randomNumbers(10)
         view?.clearInputField()
         newValue = ""

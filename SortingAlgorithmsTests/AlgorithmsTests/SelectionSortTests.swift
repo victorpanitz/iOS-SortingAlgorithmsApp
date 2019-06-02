@@ -7,7 +7,6 @@
 //
 
 import XCTest
-
 @testable import SortingAlgorithms
 
 class SelectionSortTests: XCTestCase {

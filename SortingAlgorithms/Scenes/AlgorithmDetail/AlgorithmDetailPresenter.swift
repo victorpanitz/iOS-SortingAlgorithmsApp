@@ -28,7 +28,7 @@ final class AlgorithmDetailPresenter {
         self.view = view
         
         view.setNavigationBarTitle(algorithm.title)
-        view.updateDataSource(dataSource, reloadData: false)
+        view.updateDataSource(dataSource)
         generateSwaps()
     }
     
@@ -44,9 +44,10 @@ final class AlgorithmDetailPresenter {
         startSwap()
     }
     
-    func restart() {
+    func restartButtonTriggered() {
         dataSource = dataSourceBackup
-        view?.updateDataSource(dataSource, reloadData: true)
+        view?.toggleRestartButton(false)
+        view?.updateDataSourceAndReloadData(dataSource)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
             guard let self = self else { return }
@@ -57,12 +58,12 @@ final class AlgorithmDetailPresenter {
     
     private func startSwap() {
         guard swaps.count > 0 else {
-            view?.allSwapsDidEnd()
+            view?.toggleRestartButton(true)
             return
         }
         
         algorithm.swapDataSource(datasource: &dataSource, x0: swaps[0].x0, x1: swaps[0].x1)
-        view?.updateDataSource(dataSource, reloadData: false)
+        view?.updateDataSource(dataSource)
         view?.swapCell(x0: swaps[0].x0, x1: swaps[0].x1)
         swaps.removeFirst()
     }
