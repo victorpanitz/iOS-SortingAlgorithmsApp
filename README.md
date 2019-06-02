@@ -73,5 +73,6 @@ The list of [contributors](https://github.com/victorpanitz/iOS-SortingAlgorithms
 
 🇮🇳 - [Anantha Krishnan](https://github.com/AnanthaKrish)
 
+🇧🇷 - [João Reichert](https://github.com/reeichert)
 
 
