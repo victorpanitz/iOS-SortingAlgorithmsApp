@@ -26,6 +26,7 @@ final class AlgorithmsDetailPresenterTests: XCTestCase {
         XCTAssert(view.setNavigationBarTitleCalled == true)
         XCTAssert(view.navigationBarTitlePassed == "Bubble Sort")
         XCTAssert(view.updateDataSourceCalled == true)
+        XCTAssert(view.reloadDataCalled == false)
         XCTAssert(view.dataSourcePassed!.count == 5)
         XCTAssert(view.dataSourcePassed![0] == 1)
         XCTAssert(view.dataSourcePassed![1] == 3)
@@ -38,6 +39,7 @@ final class AlgorithmsDetailPresenterTests: XCTestCase {
         sut_presenter.viewDidAppear()
         
         XCTAssert(view.updateDataSourceCalled == true)
+        XCTAssert(view.reloadDataCalled == false)
         XCTAssert(view.dataSourcePassed!.count == 5)
         XCTAssert(view.dataSourcePassed![0] == 1)
         XCTAssert(view.dataSourcePassed![1] == 2)
@@ -56,6 +58,7 @@ final class AlgorithmsDetailPresenterTests: XCTestCase {
         sut_presenter.swapDidComplete()
         
         XCTAssert(view.updateDataSourceCalled == true)
+        XCTAssert(view.reloadDataCalled == false)
         XCTAssert(view.dataSourcePassed!.count == 5)
         XCTAssert(view.dataSourcePassed![0] == 1)
         XCTAssert(view.dataSourcePassed![1] == 2)
@@ -77,12 +80,29 @@ final class AlgorithmsDetailPresenterTests: XCTestCase {
         XCTAssert(router.dismissCalled == true)
     }
     
+    func test_restartButtonTriggered() {
+        sut_presenter.restartButtonTriggered()
+        
+        XCTAssert(view.restartButtonIsEnable == false)
+        XCTAssert(view.updateDataSourceCalled == true)
+        XCTAssert(view.reloadDataCalled == true)
+        XCTAssert(view.dataSourcePassed!.count == 5)
+        XCTAssert(view.dataSourcePassed![0] == 1)
+        XCTAssert(view.dataSourcePassed![1] == 3)
+        XCTAssert(view.dataSourcePassed![2] == 2)
+        XCTAssert(view.dataSourcePassed![3] == 5)
+        XCTAssert(view.dataSourcePassed![4] == 4)
+    }
+    
 }
 
 final class AlgorithmDetailViewSpy: AlgorithmDetailView {
     
     var updateDataSourceCalled: Bool?
+    var reloadDataCalled: Bool?
     var swapCellCalled: Bool?
+    var toggleRestartButtonCalled: Bool?
+    var restartButtonIsEnable: Bool?
     var setNavigationBarTitleCalled: Bool?
     var dataSourcePassed: [Int]?
     var swaps = [(x0: Int, x1: Int)]()
@@ -92,6 +112,7 @@ final class AlgorithmDetailViewSpy: AlgorithmDetailView {
     
     func updateDataSource(_ datasource: [Int]) {
         updateDataSourceCalled = true
+        reloadDataCalled = false
         dataSourcePassed = datasource
     }
     
@@ -103,6 +124,17 @@ final class AlgorithmDetailViewSpy: AlgorithmDetailView {
     func setNavigationBarTitle(_ text: String) {
         setNavigationBarTitleCalled = true
         navigationBarTitlePassed = text
+    }
+    
+    func updateDataSourceAndReloadData(_ datasource: [Int]) {
+        updateDataSourceCalled = true
+        reloadDataCalled = true
+        dataSourcePassed = datasource
+    }
+    
+    func toggleRestartButton(_ isEnable: Bool) {
+        toggleRestartButtonCalled = true
+        restartButtonIsEnable = isEnable
     }
     
 }

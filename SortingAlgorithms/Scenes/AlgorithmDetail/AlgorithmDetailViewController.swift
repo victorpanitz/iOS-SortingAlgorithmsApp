@@ -11,6 +11,24 @@ import UIKit
 
 final class AlgorithmDetailViewController: UIViewController {
     
+    lazy var closeButton: UIBarButtonItem = {
+        var rightButton = UIBarButtonItem(
+            barButtonSystemItem: UIBarButtonItem.SystemItem.stop,
+            target: self,
+            action: #selector(closeButtonDidTouchUpInside)
+        )
+        return rightButton
+    }()
+    
+    lazy var restartButton: UIBarButtonItem = {
+        let restartButton = UIBarButtonItem(
+            barButtonSystemItem: .refresh,
+            target: self,
+            action: #selector(restartButtonDidTouchUpInside))
+        restartButton.isEnabled = false
+        return restartButton
+    }()
+    
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -60,13 +78,10 @@ final class AlgorithmDetailViewController: UIViewController {
     private func setupNavigationBar() {
         navigationController?.navigationBar.prefersLargeTitles = false
         
-        let rightButton = UIBarButtonItem(
-            barButtonSystemItem: UIBarButtonItem.SystemItem.stop,
-            target: self,
-            action: #selector(closeButtonDidTouchUpInside)
-        )
-        
-        self.navigationItem.rightBarButtonItem = rightButton
+        self.navigationItem.rightBarButtonItems = [
+            restartButton,
+            closeButton
+        ]
     }
     
     private func setupCollectionView() {setupNavigationBar()
@@ -83,9 +98,17 @@ final class AlgorithmDetailViewController: UIViewController {
     @objc private func closeButtonDidTouchUpInside() {
         presenter.closeButtonTriggered()
     }
+    
+    @objc private func restartButtonDidTouchUpInside() {
+        presenter.restartButtonTriggered()
+    }
 }
 
 extension AlgorithmDetailViewController: AlgorithmDetailView {
+    
+    func toggleRestartButton(_ isEnable: Bool) {
+        restartButton.isEnabled = isEnable
+    }
     
     func setNavigationBarTitle(_ text: String) {
         navigationItem.title = text
@@ -93,6 +116,11 @@ extension AlgorithmDetailViewController: AlgorithmDetailView {
     
     func updateDataSource(_ datasource: [Int]) {
         self.datasource = datasource
+    }
+    
+    func updateDataSourceAndReloadData(_ datasource: [Int]) {
+        self.datasource = datasource
+        self.collectionView.reloadData()
     }
     
     func swapCell(x0: Int, x1: Int) {

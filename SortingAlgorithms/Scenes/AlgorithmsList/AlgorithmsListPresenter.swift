@@ -16,7 +16,8 @@ class AlgorithmsListPresenter {
     private let dataSource: [Algorithm] = [
         BubbleSort(),
         InsertionSort(),
-        SelectionSort()
+        SelectionSort(),
+        QuickSort()
     ]
     
     init (router: AlgorithmsListRoutering) {

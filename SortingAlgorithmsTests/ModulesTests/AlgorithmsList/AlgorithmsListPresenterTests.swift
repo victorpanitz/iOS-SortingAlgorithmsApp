@@ -25,10 +25,11 @@ final class AlgorithmsListPresenterTests: XCTestCase {
     
     func test_attachView() {
         XCTAssert(view.updateDataSourceCalled == true)
-        XCTAssert(view.dataSourcePassed!.count == 3)
+        XCTAssert(view.dataSourcePassed!.count == 4)
         XCTAssert(view.dataSourcePassed![0] is BubbleSort)
         XCTAssert(view.dataSourcePassed![1] is InsertionSort)
         XCTAssert(view.dataSourcePassed![2] is SelectionSort)
+        XCTAssert(view.dataSourcePassed![3] is QuickSort)
     }
     
     func test_viewWillAppear() {
@@ -58,10 +59,17 @@ final class AlgorithmsListPresenterTests: XCTestCase {
         XCTAssert(router.navigateToAlgorithmDetailCalled == true)
         XCTAssert(router.algorithmPassed is SelectionSort)
     }
+    
+    func test_itemTriggered_quickSort() {
+        sut_presenter.itemTriggered(index: 3)
+        
+        XCTAssert(router.navigateToAlgorithmDetailCalled == true)
+        XCTAssert(router.algorithmPassed is QuickSort)
+    }
 
     
     func test_itemTriggered_invalid_index() {
-        sut_presenter.itemTriggered(index: 3)
+        sut_presenter.itemTriggered(index: 4)
         
         XCTAssert(router.navigateToAlgorithmDetailCalled == nil)
         XCTAssert(router.algorithmPassed == nil)

@@ -58,4 +58,14 @@ final class DataSourcePresenter {
         }
     }
     
+    func addSampleButtonTrigerred() {
+        array = randomNumbers(10)
+        view?.clearInputField()
+        newValue = ""
+        view?.updateArray("\(array)")
+    }
+    
+    private func randomNumbers(_ total: Int) -> [Int] {
+        return (0..<total).map { _ in .random(in: 1...40) }
+    }
 }
