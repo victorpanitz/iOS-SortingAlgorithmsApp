@@ -14,84 +14,86 @@ final class AlgorithmsDetailPresenterTests: XCTestCase {
     private var sut_presenter: AlgorithmDetailPresenter!
     private var view: AlgorithmDetailViewSpy!
     private var router: AlgorithmDetailRouteringSpy!
+    private var algorithm: AlgorithmSpy!
     
     override func setUp() {
         view = AlgorithmDetailViewSpy()
         router = AlgorithmDetailRouteringSpy()
-        sut_presenter = AlgorithmDetailPresenter(router: router, algorithm: BubbleSort(), datasource: [1,3,2,5,4])
+        algorithm = AlgorithmSpy()
+        sut_presenter = AlgorithmDetailPresenter(router: router, algorithm: algorithm, datasource: [1,3,2,5,4])
         sut_presenter.attachView(view)
     }
     
     func test_attachView() {
-        XCTAssert(view.setNavigationBarTitleCalled == true)
-        XCTAssert(view.navigationBarTitlePassed == "Bubble Sort")
-        XCTAssert(view.updateDataSourceCalled == true)
-        XCTAssert(view.reloadDataCalled == false)
-        XCTAssert(view.dataSourcePassed!.count == 5)
-        XCTAssert(view.dataSourcePassed![0] == 1)
-        XCTAssert(view.dataSourcePassed![1] == 3)
-        XCTAssert(view.dataSourcePassed![2] == 2)
-        XCTAssert(view.dataSourcePassed![3] == 5)
-        XCTAssert(view.dataSourcePassed![4] == 4)
+        XCTAssertEqual(view.setNavigationBarTitleCalled, true)
+        XCTAssertEqual(view.navigationBarTitlePassed, "algorithm title value")
+        XCTAssertEqual(view.updateDataSourceCalled , true)
+        XCTAssertEqual(view.reloadDataCalled, false)
+        XCTAssertEqual(view.dataSourcePassed!.count, 5)
+        XCTAssertEqual(view.dataSourcePassed![0], 1)
+        XCTAssertEqual(view.dataSourcePassed![1], 3)
+        XCTAssertEqual(view.dataSourcePassed![2], 2)
+        XCTAssertEqual(view.dataSourcePassed![3], 5)
+        XCTAssertEqual(view.dataSourcePassed![4], 4)
     }
     
     func test_viewDidAppear() {
         sut_presenter.viewDidAppear()
         
-        XCTAssert(view.updateDataSourceCalled == true)
-        XCTAssert(view.reloadDataCalled == false)
-        XCTAssert(view.dataSourcePassed!.count == 5)
-        XCTAssert(view.dataSourcePassed![0] == 1)
-        XCTAssert(view.dataSourcePassed![1] == 2)
-        XCTAssert(view.dataSourcePassed![2] == 3)
-        XCTAssert(view.dataSourcePassed![3] == 5)
-        XCTAssert(view.dataSourcePassed![4] == 4)
+        XCTAssertEqual(view.updateDataSourceCalled, true)
+        XCTAssertEqual(view.reloadDataCalled, false)
+        XCTAssertEqual(view.dataSourcePassed!.count, 5)
+        XCTAssertEqual(view.dataSourcePassed![0], 3)
+        XCTAssertEqual(view.dataSourcePassed![1], 1)
+        XCTAssertEqual(view.dataSourcePassed![2], 2)
+        XCTAssertEqual(view.dataSourcePassed![3], 5)
+        XCTAssertEqual(view.dataSourcePassed![4], 4)
         
-        XCTAssert(view.swapCellCalled == true)
-        XCTAssert(view.swaps.count == 1)
-        XCTAssert(view.swaps[0].x0 == 1)
-        XCTAssert(view.swaps[0].x1 == 2)
+        XCTAssertEqual(view.swapCellCalled, true)
+        XCTAssertEqual(view.swaps.count, 1)
+        XCTAssertEqual(view.swaps[0].x0, 0)
+        XCTAssertEqual(view.swaps[0].x1, 1)
     }
     
     func test_swapDidComplete() {
         sut_presenter.viewDidAppear()
         sut_presenter.swapDidComplete()
         
-        XCTAssert(view.updateDataSourceCalled == true)
-        XCTAssert(view.reloadDataCalled == false)
-        XCTAssert(view.dataSourcePassed!.count == 5)
-        XCTAssert(view.dataSourcePassed![0] == 1)
-        XCTAssert(view.dataSourcePassed![1] == 2)
-        XCTAssert(view.dataSourcePassed![2] == 3)
-        XCTAssert(view.dataSourcePassed![3] == 4)
-        XCTAssert(view.dataSourcePassed![4] == 5)
+        XCTAssertEqual(view.updateDataSourceCalled, true)
+        XCTAssertEqual(view.reloadDataCalled, false)
+        XCTAssertEqual(view.dataSourcePassed!.count, 5)
+        XCTAssertEqual(view.dataSourcePassed![0], 3)
+        XCTAssertEqual(view.dataSourcePassed![1], 1)
+        XCTAssertEqual(view.dataSourcePassed![2], 5)
+        XCTAssertEqual(view.dataSourcePassed![3], 2)
+        XCTAssertEqual(view.dataSourcePassed![4], 4)
         
-        XCTAssert(view.swapCellCalled == true)
-        XCTAssert(view.swaps.count == 2)
-        XCTAssert(view.swaps[0].x0 == 1)
-        XCTAssert(view.swaps[0].x1 == 2)
-        XCTAssert(view.swaps[1].x0 == 3)
-        XCTAssert(view.swaps[1].x1 == 4)
+        XCTAssertEqual(view.swapCellCalled, true)
+        XCTAssertEqual(view.swaps.count, 2)
+        XCTAssertEqual(view.swaps[0].x0, 0)
+        XCTAssertEqual(view.swaps[0].x1, 1)
+        XCTAssertEqual(view.swaps[1].x0, 2)
+        XCTAssertEqual(view.swaps[1].x1, 3)
     }
     
     func test_closeButtonTriggered() {
         sut_presenter.closeButtonTriggered()
         
-        XCTAssert(router.dismissCalled == true)
+        XCTAssertEqual(router.dismissCalled, true)
     }
     
     func test_restartButtonTriggered() {
         sut_presenter.restartButtonTriggered()
         
-        XCTAssert(view.restartButtonIsEnable == false)
-        XCTAssert(view.updateDataSourceCalled == true)
-        XCTAssert(view.reloadDataCalled == true)
-        XCTAssert(view.dataSourcePassed!.count == 5)
-        XCTAssert(view.dataSourcePassed![0] == 1)
-        XCTAssert(view.dataSourcePassed![1] == 3)
-        XCTAssert(view.dataSourcePassed![2] == 2)
-        XCTAssert(view.dataSourcePassed![3] == 5)
-        XCTAssert(view.dataSourcePassed![4] == 4)
+        XCTAssertEqual(view.restartButtonIsEnable, false)
+        XCTAssertEqual(view.updateDataSourceCalled, true)
+        XCTAssertEqual(view.reloadDataCalled, true)
+        XCTAssertEqual(view.dataSourcePassed!.count, 5)
+        XCTAssertEqual(view.dataSourcePassed![0], 1)
+        XCTAssertEqual(view.dataSourcePassed![1], 3)
+        XCTAssertEqual(view.dataSourcePassed![2], 2)
+        XCTAssertEqual(view.dataSourcePassed![3], 5)
+        XCTAssertEqual(view.dataSourcePassed![4], 4)
     }
     
 }
@@ -147,4 +149,19 @@ final class AlgorithmDetailRouteringSpy: AlgorithmDetailRoutering {
         dismissCalled = true
     }
     
+}
+
+final class AlgorithmSpy: Algorithm {
+    var title: String = "algorithm title value"
+    var description: String = "algorithm description value"
+    var image: String = "algorithm image value"
+    
+    func generateSwaps(from list: [Int]) -> [(x0: Int, x1: Int)] {
+        return [
+            (x0: 0, x1: 1),
+            (x0: 2, x1: 3),
+            (x0: 4, x1: 5)
+        ]
+    }
+
 }
