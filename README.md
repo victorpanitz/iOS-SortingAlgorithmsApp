@@ -10,16 +10,11 @@ An open source app focused on show in a visual way how sorting algorithms actual
 ### Do you want to contribute? Check the backlog
 
 #### // TODO:
-- [ ] New algorithms
-- [ ] Control animation speed
-- [ ] Add algorithm description on detail scene
-- [ ] More features on backlog :)
-
-#### // IN PROGRESS:
-- [X] Unit Tests
-
-#### // DONE:
-- [X] Enable user to add his own array
+- [ ] New algorithms;
+- [ ] Control animation speed;
+- [ ] Add algorithm details about the selected algorithm;
+- [ ] Improve code coverage (unit tests);
+- [ ] More features to the backlog :)
 
 ### Adding a new algorithm
 
