@@ -70,4 +70,6 @@ The list of [contributors](https://github.com/victorpanitz/iOS-SortingAlgorithms
 
 🇧🇷 - [João Reichert](https://github.com/reeichert)
 
+🇨🇳 - [urmyfaith](https://github.com/urmyfaith?tab=repositories)
+
 
